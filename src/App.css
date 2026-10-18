@@ -1,0 +1,128 @@
+.game {
+  background: linear-gradient(to right,
+      #21012E, black, #01162D);
+  height: 100vh;
+  position: relative;
+  overflow: hidden !important;
+}
+
+h3 {
+  font-size: 135px;
+  font-family: cursive;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  animation: for_effect 5s linear infinite;
+}
+
+@keyframes for_effect {
+  50% {
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+h3:nth-of-type(1) {
+  left: 5%;
+  text-shadow: 0 0 15px dodgerblue, 0 0 15px dodgerblue, 0 0 15px dodgerblue, 0 0 15px dodgerblue;
+  -webkit-text-stroke: 5px #9dceff;
+  color: dodgerblue;
+}
+
+h3:nth-of-type(2) {
+  right: 5%;
+  text-shadow: 0 0 15px deeppink, 0 0 15px deeppink, 0 0 15px deeppink, 0 0 15px deeppink;
+  -webkit-text-stroke: 5px #ff9dfac6;
+  color: deeppink;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 750px;
+  height: 750px;
+  box-shadow: -5px -5px 15px dodgerblue, 5px 5px 15px deeppink;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+  overflow: hidden !important;
+}
+
+.block {
+  background: linear-gradient(to bottom, #21012ec4, black, #011932);
+  position: relative;
+  cursor: pointer;
+  overflow: hidden !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.block::before,
+.block::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  transition: all .5s linear;
+}
+
+.block::before {
+  top: 20px;
+  left: 20px;
+  border-left: 1px solid deeppink;
+  border-top: 1px solid deeppink;
+}
+
+.block::after {
+  right: 20px;
+  bottom: 20px;
+  border-right: 1px solid dodgerblue;
+  border-bottom: 1px solid dodgerblue;
+}
+
+.block:hover:before,
+.block:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.block>p {
+  color: white;
+  font-family: cursive;
+  font-size: 105px;
+  -webkit-box-reflect: below -35px linear-gradient(transparent 55%, black);
+}
+
+.block:nth-of-type(6)>p {
+  color: black !important;
+  text-shadow: 0 0 9px #7f7f7f, 0 0 9px #7f7f7f, 0 0 9px #7f7f7f !important;
+  -webkit-text-stroke: 5px #525252 !important;
+  font-size: 135px;
+  -webkit-box-reflect: below -50px linear-gradient(transparent 55%, black);
+}
+
+.box {
+  position: relative;
+}
+
+.end {
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(
+    deeppink, #005dbb
+  );
+  z-index: 987 !important;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(45deg);
+  transition: all .5s linear;
+}
+
